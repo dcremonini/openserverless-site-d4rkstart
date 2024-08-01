@@ -1,66 +1,299 @@
 ---
-title: Installation
-description: How to and where install OpenServerless
-weight: 50
+title: Installation-new
+description: How to install OpenServerless
+weight: 80
 ---
+
+Slogan: OpenServerless is ...
+
+The audience of this document is composed by developers, SREs, and OpenServerless contributors.
+
+
+## Prepare the target environment on which you want to install OpenServerless
+
+TODO 1: PUT A SCHEMA HERE
+TODO 2: FOR EACH EXTERNAL LINK, ADD A TARGET _blank TO OPEN THE PAGE IN A NEW BROWSER TAB.
+
+
+Here we illustrate how to prepare a target environment for OpenServerless. 
+
+Depending on your use case, you can install OpenServerless:
+
+- for *development* on a [single node](#single-node-development-installation) environment,
+    either on your local machine or on a Linux server.
+
+- for *production*, on a [multi node](#multi-node-production-installation) environment
+    provided by a Kubernetes cluster.
+
+### Single Node development installation
+
+For *development* purposes, you can install a single node
+OpenServerless deployment on:
+
+- your [local machine](/docs/installation-new/install/local/), you need
+    [Docker Desktop](/docs/installation-new/prereq/docker/)
+
+- on a *single Linux server node*
+  [Linux server](/docs/installation-new/install/server/), you need a server with [passwordless ssh access and sudo](/docs/installation-new/prereq/server/).
+
+The OpenServerless `ops` CLI can automatically install a Kubernetes environment, using
+[K3S](https://k3s.io), but if you prefer, you can install a single-node
+Kubernetes instance by yourself.
+
+If you choose to install Kubernetes on your server, we provide support
+for:
+
+- [SuSE K3S](/docs/installation-new/prereq/k3s/)
+
+- [Canonical MicroK8S](/docs/installation-new/prereq/mk8s)
+
+### Multi Node production installation
+
+For *production* purposes, you need a multi-node Kubernetes cluster
+that satisfies [those prerequisites](/docs/installation-new/prereq/kubernetes/),
+ with its `kubeconfig` file accessible.
+
+If you have such a cluster, you can install
+[OpenServerless in a Kubernetes cluster](/docs/installation-new/install/cluster/)
+
+If you do not have a cluster and you need to setup one, we provide
+support for provisioning a suitable cluster that satisfied our
+prerequisites for the following Kubernetes environments:
+
+- [EKS in Amazon AWS](/docs/installation-new/prereq/kubernetes/eks/)
+
+- [AKS in Microsoft Azure](/docs/installation-new/prereq/kubernetes/aks/)
+
+- [GKE in Google Cloud](/docs/installation-new/prereq/kubernetes/gke/)
+
+- [RedHat OpenShift](/docs/installation-new/prereq/kubernetes/openshift/)
+
+Once you have a suitable Kubernetes cluster, you can proceed with the next chapter.
+
 ## Installation
 
-### Overview
+Before starting the installation, please be sure to have satisfied the prerequisites shown above.
 
-If you are in hurry and you think this guide is TL;DR (too long, don’t
-read), please read at least our [Quick Start](/docs/installation/quickstart/)
-single page installation guide.
+OpenServerless can be installed in many target environments, using the `ops` CLI (Command Line Interface).
+Once you have installed the `ops` CLI, you can configure Openserverless on the target environment.
 
-It gives you an overview of the installation process, omitting some more
-advanced details. It can be enough to get you started and install
-OpenServerless.
+To perform the installation follow this step-by-step procedure:
 
-Once you want to know more, you can come back.
+1. Download and install the `ops` CLI (Command Line Interface) for the computer you are working on.
+2. Install the required packages using the `ops` CLI on the target environment that you prepared in the prerequistes section above.
 
-If you instead want the read the full documentation first, please read
-on.
 
-### Steps to follow
+## Configure OpenServerless
 
-OpenServerless can be installed in many environments, using our powerful
-command line interface `ops`.
+TODO REVIEW THIS PART
 
-So you should start downloading the CLI [from this
-page](/docs/installation/download/index.adoc).
+- [configure](/docs/installation-new/configure/) the services you want
 
-Once you installed `ops`, before installing you need to [check the
-prerequisites](/docs/installation/prereq/index.adoc) for the installation, and satisfy
-them
 
-If the the prerequisites are OK, you can make your choices of what you
-want to [Configure](/docs/installation/configure/) your OpenServerless
-installation.
+### Download and install the `ops` CLI (Command Line Interface)
 
-Finally, once you have:
+The OpenServerless `ops` CLI (Command Line Interface) can be installed on Windows, macOS and Linux.
 
-1. downloaded `ops`
+Three tabs:
+- TAB To install on Windows ...
+- TAB To install on macOS ...
+- TAB To install on Linux ...
 
-2. satisfied the prerequisites
 
-3. configured your installation
+{{< tabpane >}}
+{{< tab header="Where to install the ops cli :" disabled=true />}}
+{{< tab header="Windows" lang="text" >}}
++++
+title = "How to install the ops cli on Windows"
+weight = 1
+type = "docs"
+description = '''
+A special section with a docs layout.
+This is the second line for Windows.
+'''
++++
+{{< /tab >}}
+{{< tab header="macOS" lang="text" >}}
+---
+title: "How to install the ops cli on macOS"
+weight: 1
+type: docs
+description: >
+  A special section with a docs layout for macOS.
+  This is the second line.
+---
+{{< /tab >}}
+{{< tab header="Linux" lang="text" >}}
+{
+  "title": "How to install the ops cli on Linux",
+  "weight": 1,
+  "type": "docs",
+  "description": "A special section with a docs layout for Linux.\n This is the second line for Linux"
+}
+{{< /tab >}}
+{{< /tabpane >}}
 
-you can choose where to install, either:
 
-- in your [Local machine](/docs/installation/install/local/)
+### Installation and configuration of OpenServerless on the target environment
 
-- in a [Linux server](/docs/installation/install/server/)
+To install OpenServerless on the target environment
 
-- in a [Kubernetes cluster](/docs/installation/install/cluster/)
+you can choose where to install OpenServerless, either:
 
-### Post Installation
+- on your [Local machine](/docs/installation-new/install/local/)
 
-After the installation, you can change later the configuration and
-update the system.
+- on a [Linux server](/docs/installation-new/install/server/)
+
+- on a [Kubernetes cluster](/docs/installation-new/install/cluster/)
+
+
+#### The target is the local machine
+
+This page describes how to install OpenServerless on your local machine. The
+services are limited and not accessible from the outside, so this installation is useful only for development purposes.
+
+##### Prerequisites
+
+TODO: remove this chapter?
+
+Before installing, you need to:
+
+- install [Docker](/docs/installation-new/prereq/docker/).
+
+- install [ops](/docs/installation-new/download/).
+
+- [configure](/docs/installation-new/configure/) the services you want
+
+> 💡 **NOTE**
+>
+> ``https`` protocol and static publishing in a local
+installation are not supported. If you enable them, the configuration will be ignored.
+
+##### Installation
+
+Run the command:
+
+    ops setup devcluster
+
+and wait until the command terminates.
+
+##### Post installation
+
+[Check the tutorial](/docs/tutorial/) to learn how to use it.
+
+
+##### Uninstalling
+
+To uninstall the development cluster, execute the command:
+
+    ops setup devcluster --uninstall
+
+
+
+#### The target is the a server
+This page describes how to install OpenServerless on a Linux server
+accessible with SSH.
+
+This is a single node installation, so it is advisable only for
+development purposes.
+
+##### Prerequisites
+
+TODO: remove this chapter?
+
+Before installing, you need to:
+
+1. install the OpenServerless CLI [ops](/docs/installation/download/);
+
+2. provision a [server running a Linux operating system](/docs/installation/prereq/server/), 
+   either a virtual machine or a physical server, and you know its IP address 
+   or DNS name;
+
+3. configure it to have [passwordless ssh access and sudo rights](/docs/installation/prereq/server/generic/);
+
+4. open the firewall to have access to ports 80, 443 and 6443 or 16443
+    from your client machine;
+
+5. [configure](/docs/installation/configure/dns/) the DNS name for the server and choose
+    the services you want to enable;
+
+##### Installation
+
+If the prerequisites are satisfied, execute the dommand:
+
+    ops setup server <server> <user>
+
+> ❗ **IMPORTANT**
+>
+> Replace in the command before `<server>` with the IP address or DNS name
+used to access the server, and `<user>` with the username you have to
+use to access the server
+
+Wait until the command completes and you will have OpenServerless up and
+running.
+
+##### Post Installation
+
+- [Check the tutorial](/docs/tutorial/) to learn how to use it.
+
+
+##### Uninstalling
+
+- To uninstall, execute the command:
+
+```
+ops setup server <server> <user> --uninstall
+```
+
+
+#### The target is a cluster
+This section describes how to install OpenServerless on a Kubernetes Cluster
+
+##### Prerequisites
+
+TODO: remove this chapter?
+
+
+Before installing, you need to:
+
+- [Provision](/docs/installation/prereq/kubernetes/) a Kubernetes Cluster
+
+- [Configure](/docs/installation/configure/) the installation
+
+- install [Download and install](/docs/installation/download/) OpenServerless CLI, `ops`.
+
+##### Installation
+
+If you have a Kubernetes cluster directly accessible with its
+configuration, or you provisioned a cluster in some cloud using `ops`
+embedded tools, you just need to type:
+
+    ops setup cluster
+
+Sometimes the kubeconfig includes access to multiple Kubernetes
+instances, each one identified by a different `<context>` name. You can
+install the OpenServerless cluster in a specified `<context>` with:
+
+    ops setup cluster <context>
+
+##### Post Install
+
+- [Check the tutorial](/docs/tutorial) to learn how to use it.
+
+
+##### Uninstalling
+
+To uninstall, execute the command:
+
+```
+ops setup cluster --uninstall
+```
+
 
 ### Support
 
 If you have issues, please check:
 
-- the [Troubleshooting](/docs/installation/debug/) page
+- the [Troubleshooting](/docs/installation-new/debug/) page
 
-- our [Discussion forum](http://nuvolaris.discourse.group)
+- our [Discussion forum](https://nuvolaris.discourse.group)
