@@ -12,6 +12,7 @@ The audience of this document is composed by developers, SREs, and OpenServerles
 ## Prepare the target environment on which you want to install OpenServerless
 
 TODO 1: PUT A SCHEMA HERE
+
 TODO 2: FOR EACH EXTERNAL LINK, ADD A TARGET _blank TO OPEN THE PAGE IN A NEW BROWSER TAB.
 
 
@@ -37,11 +38,13 @@ OpenServerless deployment on:
   [Linux server](/docs/installation-new/install/server/), you need a server with [passwordless ssh access and sudo](/docs/installation-new/prereq/server/).
 
 The OpenServerless `ops` CLI can automatically install a Kubernetes environment, using
-[K3S](https://k3s.io), but if you prefer, you can install a single-node
+[K3S](https://k3s.io), or [Docker](https://www.docker.com/) but if you prefer, you can install a single-node
 Kubernetes instance by yourself.
 
 If you choose to install Kubernetes on your server, we provide support
 for:
+
+- [Docker](/docs/installation-new/prereq/docker/)
 
 - [SuSE K3S](/docs/installation-new/prereq/k3s/)
 
