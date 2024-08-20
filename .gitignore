@@ -4,3 +4,8 @@ node_modules/
 package-lock.json
 .hugo_build.lock
 .env
+.direnv/
+.idea
+openserverless-cli
+openserverless-task
+
