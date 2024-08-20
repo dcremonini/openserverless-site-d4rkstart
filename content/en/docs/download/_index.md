@@ -8,18 +8,27 @@ draft: false
 
 🚧 PAGE UNDER CONSTRUCTION  🚧
 
-### Download links
+To use OpenServerless you need to install a tool called `ops` CLI with which you can install the OpenServerless runtime.
+While you typically run `ops` CLI on you computer, you can install the OpenServerless on your computer, on a (remote) Virtual Machine, and on a cluster of (remote) Virtual Machines.
 
-OpenServerless can be installed with its Command Line Interface, `ops`.
+### Download links
 
 For `ops` CLI We support 64-bit versions of recent Windows, macOS and major Linux distributions.
 It is available for different architectures, and in different formats.
 
-You can download the `ops` CLI from:
+OpenServerless can be installed with its Command Line Interface, `ops`.
+
+To automatically install the latest version of the ops CLI you can open your terminal and type the command below:
+
+```bash
+$ curl -sL https://bit.ly/get-ops | bash
+```
+
+If instead you prefer installing the `ops` CLI manually, you can download the `ops` CLI from:
 
     https://github.com/apache/openserverless-cli/releases
 
-then install it on your system.
+then install it on your system, and make it available in the path.
 
 ### After the installation of the ops cli
 
@@ -34,6 +43,6 @@ tasks are continuously evolving and expanding.
 
 `ops` will suggest when to update them (at least once a day).
 
-You normally just need to update the tasks but sometimes you also need
+You normally just need to update the tasks, but sometimes you also need
 to update `ops` itself. The system will detect when it is the case and
 tell you what to do.
